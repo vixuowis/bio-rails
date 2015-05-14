@@ -1,0 +1,12 @@
+%h1 Locate Gene for S.R.
+%form{:action => "/", method: "POST"}
+  %p STEP 1: data
+  %textarea{cols: 100, rows:10, placeholder: "e.g. ATCGCGTAATGCCGTA", name: "data"}= params['data']
+  %p STEP 2: place
+  %input{:type => "text", placeholder: "e.g. 3", name: "place", value: "#{params['place']}"}
+  %p 
+    STEP 3: 
+    %button{:type => "submit"} get result
+%p{style:"word-break: break-all"}
+  %span{style:"background-color: yellow"}=@part0
+  = @part1
