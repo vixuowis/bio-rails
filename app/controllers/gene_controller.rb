@@ -1,4 +1,6 @@
 class GeneController < ApplicationController
+  protect_from_forgery with: :null_session
+  
   def index
     if params['data'] and params['place']
       @data = params['data'].split(" ").join("")

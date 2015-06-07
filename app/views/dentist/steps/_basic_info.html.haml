@@ -1,0 +1,31 @@
+.page-header#step1
+  %h4 
+    基本信息采集
+
+.col-sm-8
+  = form_tag("#step2", class:"form-horizontal") do
+    / .form-group
+    /   = label_tag(:u_ticket, "流水号:", class:"control-label col-sm-2")
+    /   .col-sm-4
+    /     %input{type:"hidden", name: "ticket", value: "#{@ticket}"}
+    /     %p= @ticket
+    .form-group
+      = label_tag(:u_name, "姓名:", class:"control-label col-sm-2")
+      .col-sm-4
+        = text_field_tag(:u_name, nil, class: "form-control", placeholder:"姓名")
+    .form-group
+      = label_tag(:u_gender, "性别:", class:"control-label col-sm-2")
+      .col-sm-2
+        = select_tag(:u_gender, options_for_select([ "男", "女" ], "男"), class:"form-control")
+    .form-group
+      = label_tag(:u_age, "年龄:", class:"control-label col-sm-2")
+      .col-sm-2
+        = number_field_tag(:u_age, 20, in: 0...100, class: "form-control")
+    .form-group
+      = label_tag(:u_ill, "我想问诊:", class:"control-label col-sm-2")
+      .col-sm-6
+        = select_tag(:u_ill, options_for_select(ill_list), class:"form-control")
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        %input{type:"hidden", name: "step", value: "1"}
+        = submit_tag("下一步", data: { confirm: "确认基本信息正确以继续" }, class: "btn btn-primary")

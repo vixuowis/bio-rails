@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -44,3 +44,5 @@ group :development, :test do
 end
 
 gem 'haml-rails'
+gem 'mongo'
+gem 'bson_ext'

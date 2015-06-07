@@ -1,0 +1,27 @@
+%html
+  %head
+    %title Yinghui & projects.
+    %link{rel: "stylesheet", href: "http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"}
+    %script{src: "http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"}
+    %script{src: "http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        %a.navbar-brand{href:"#"} Yinghui & projects.
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li{class:"#{"active" if current_page?("/")}"}
+              %a{href:"/"} Smart Dentist
+            %li{class:"#{"active" if current_page?("/gene")}"}
+              %a{href:"/gene"} Locate Gene
+
+    .container
+      = yield
+
+    %footer.footer
+      .container
+        <p>© 2015 Yinghui & projects. <a href="https://github.com/vixuowis" target="_blank">Github</a>. </p>

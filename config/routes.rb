@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  root  'gene#index'
-  match '/', to: 'gene#index', via:"post"
+  root 'dentist#index'
+  match '/', to: 'dentist#index', via:"post"
+  match '/', to: 'dentist#index', via:"get"
+  match '/gene', to: 'gene#index', via:"post"
+  match '/gene', to: 'gene#index', via:"get"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
